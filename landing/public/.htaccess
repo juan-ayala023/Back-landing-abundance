@@ -1,0 +1,122 @@
+# =============================================================================
+#  Abundance Code — configuración de Apache para Hostinger
+#
+#  Vite copia todo lo que hay en public/ a dist/ tal cual, así que este archivo
+#  acaba en la raíz del sitio al subir dist/ a public_html.
+#
+#  Sin esto, recargar /pricing o /faq devuelve 404: Apache busca una carpeta
+#  con ese nombre y no existe. La app es una SPA — todas las rutas las resuelve
+#  React Router dentro de index.html.
+# =============================================================================
+
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteBase /
+
+  # www → sin www, conservando ruta y query (301). El sitio tiene un único
+  # origen, abundancecode.us: con www el pago fallaba por CORS. Va antes que
+  # la regla de HTTPS para que http://www… llegue a https://sin-www en un salto.
+  RewriteCond %{HTTP_HOST} ^www\.(.+)$ [NC]
+  RewriteRule ^(.*)$ https://%1/$1 [R=301,L]
+
+  # Fuerza HTTPS (Hostinger sirve el certificado; sin esto el sitio queda
+  # accesible por http y Stripe/el navegador se quejan de contenido mixto).
+  RewriteCond %{HTTPS} !=on
+  RewriteCond %{HTTP:X-Forwarded-Proto} !https
+  RewriteRule ^(.*)$ https://%{HTTP_HOST}/$1 [R=301,L]
+
+  # Un despliegue anterior publicó copias en inglés bajo /en/… y Google las
+  # tiene indexadas. Ya no existen: el idioma es un toggle en la página. 301 a
+  # la URL equivalente para que Google traspase lo aprendido en vez de ver
+  # 13 portadas duplicadas.
+  #
+  # Menos el blog. Desde el 5 de octubre de 2026 los artículos SÍ tienen una
+  # URL por idioma —/blog/x y /en/blog/x— porque un artículo existe para que
+  # Google lo encuentre, y para enseñar la versión inglesa a quien busca en
+  # inglés necesita una dirección propia. Sin esta excepción, la regla de abajo
+  # redirigía /en/blog/x a /blog/x y la mitad del trabajo de traducir se perdía
+  # sin que nada fallara a la vista.
+  RewriteRule ^en/blog(/.*)?$ - [L]
+  RewriteRule ^en/?$ / [R=301,L]
+  RewriteRule ^en/(.+)$ /$1 [R=301,L]
+
+  # Robots de redes sociales pidiendo un artículo del blog. No ejecutan
+  # JavaScript, y las etiquetas Open Graph del artículo las pone JavaScript:
+  # verían la imagen genérica del sitio. El backend les sirve un HTML mínimo
+  # con las etiquetas del artículo (GET /api/blog/:slug/share). Google no
+  # entra aquí: ejecuta JavaScript y debe ver la página real.
+  RewriteCond %{HTTP_USER_AGENT} (facebookexternalhit|Facebot|WhatsApp|Twitterbot|LinkedInBot|Slackbot|TelegramBot|Discordbot|Pinterest|iMessageLinkPreview) [NC]
+  RewriteRule ^blog/([a-z0-9-]+)/?$ https://api.abundacecode.com/api/blog/$1/share [R=302,L]
+
+  # Páginas con <head> propio que genera scripts/postbuild-seo.mjs:
+  # /pricing → /pricing/index.html de forma interna, sin el 301 a /pricing/
+  # que Apache añadiría al tratarlo como carpeta.
+  #
+  # SOLO para robots (buscadores y previsualizaciones de enlaces), que son
+  # quienes leen el <head> sin ejecutar JavaScript. Las personas reciben
+  # siempre el index.html raíz: React pone el título y las etiquetas al
+  # cargar. Motivo (16 sept 2026): esas copias llevan escrito el nombre del
+  # bundle con hash; si en una subida se actualiza el index.html raíz y los
+  # assets pero no estas carpetas, apuntan a archivos borrados y quien entra
+  # directo a /pricing ve la página en blanco. Así una subida parcial ya no
+  # puede dejar sin página a nadie.
+  RewriteCond %{HTTP_USER_AGENT} (Googlebot|bingbot|DuckDuckBot|Baiduspider|YandexBot|Applebot|facebookexternalhit|Facebot|WhatsApp|Twitterbot|LinkedInBot|Slackbot|TelegramBot|Discordbot|Pinterest|iMessageLinkPreview) [NC]
+  RewriteCond %{DOCUMENT_ROOT}/$1/index.html -f
+  RewriteRule ^([a-z0-9-]+)$ /$1/index.html [L]
+
+  # Personas: /pricing (con o sin barra) → index.html raíz, sin el 301 a
+  # /pricing/ que Apache haría al ver la carpeta. Así la URL no cambia y la
+  # página depende solo del index.html raíz, que es el que se sube siempre.
+  RewriteCond %{DOCUMENT_ROOT}/$1 -d
+  RewriteRule ^([a-z0-9-]+)/?$ /index.html [L]
+
+  # Si el archivo o la carpeta existe de verdad (assets, imágenes), se sirve.
+  RewriteCond %{REQUEST_FILENAME} -f [OR]
+  RewriteCond %{REQUEST_FILENAME} -d
+  RewriteRule ^ - [L]
+
+  # Cualquier otra cosa la resuelve la SPA.
+  RewriteRule . /index.html [L]
+</IfModule>
+
+# ---------------------------------------------------------------------------
+#  Compresión
+# ---------------------------------------------------------------------------
+<IfModule mod_deflate.c>
+  AddOutputFilterByType DEFLATE text/html text/css text/plain text/xml
+  AddOutputFilterByType DEFLATE application/javascript application/json
+  AddOutputFilterByType DEFLATE image/svg+xml
+</IfModule>
+
+# ---------------------------------------------------------------------------
+#  Caché
+#
+#  Los assets llevan hash en el nombre (index-Dn_lpI5A.js): se pueden cachear
+#  para siempre. index.html NO — es lo que apunta a los assets nuevos en cada
+#  despliegue, y si se cachea el usuario se queda con la versión vieja.
+# ---------------------------------------------------------------------------
+<IfModule mod_expires.c>
+  ExpiresActive On
+  ExpiresByType text/css                "access plus 1 year"
+  ExpiresByType application/javascript  "access plus 1 year"
+  ExpiresByType image/png               "access plus 6 months"
+  ExpiresByType image/jpeg              "access plus 6 months"
+  ExpiresByType image/webp              "access plus 6 months"
+  ExpiresByType image/svg+xml           "access plus 6 months"
+  ExpiresByType font/woff2              "access plus 1 year"
+</IfModule>
+
+<IfModule mod_headers.c>
+  <FilesMatch "\.(html)$">
+    Header set Cache-Control "no-cache, must-revalidate"
+  </FilesMatch>
+</IfModule>
+
+# ---------------------------------------------------------------------------
+#  Cabeceras de seguridad básicas
+# ---------------------------------------------------------------------------
+<IfModule mod_headers.c>
+  Header always set X-Content-Type-Options "nosniff"
+  Header always set X-Frame-Options "SAMEORIGIN"
+  Header always set Referrer-Policy "strict-origin-when-cross-origin"
+</IfModule>

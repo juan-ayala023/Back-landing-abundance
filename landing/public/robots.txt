@@ -1,0 +1,16 @@
+# Abundance Code — robots.txt
+# Se genera desde public/ en cada build; no editar en el servidor.
+
+User-agent: *
+Allow: /
+Disallow: /activar-acceso
+Disallow: /gracias
+Disallow: /admin
+Disallow: /activate
+Disallow: /dashboard
+
+Sitemap: https://abundancecode.us/sitemap.xml
+
+# Los artículos van en el suyo, servido por la API: se escriben en la base y
+# aparecen sin volver a desplegar la web. Google acepta varios sitemaps.
+Sitemap: https://api.abundacecode.com/sitemap-blog.xml

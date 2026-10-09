@@ -1,0 +1,52 @@
+import Link from "next/link";
+import { getTranslations } from "next-intl/server";
+
+import { Logo } from "@/components/layout/logo";
+import { PieLegal } from "@/components/layout/pie-legal";
+import { urlDeCompra } from "@/lib/access/enlaces";
+import { tituloDePagina } from '@/i18n/titulo'
+
+export const generateMetadata = tituloDePagina('planes')
+
+/**
+ * Puente a la landing externa (CLAUDE.md §5).
+ *
+ * Esta app no cobra: la compra ocurre fuera. Esta pantalla solo existe para no
+ * dejar sin destino a quien llegue buscando comprar, y para que el enlace a la
+ * landing salga siempre de la variable de entorno y no de un dominio escrito a
+ * mano en el código.
+ */
+export default async function PlanesPage() {
+  const t = await getTranslations('planes')
+
+  return (
+    <>
+      <main className="mx-auto flex min-h-dvh max-w-xl flex-col items-center justify-center gap-8 px-6 text-center">
+        <Logo size={96} />
+
+        <div className="flex flex-col gap-3">
+          <h1 className="text-4xl font-light tracking-tight">{t('titulo')}</h1>
+          <p className="text-tinta-suave">
+          {t('descripcion')}
+          </p>
+        </div>
+
+        <div className="flex flex-wrap justify-center gap-4">
+          <a
+            href={urlDeCompra()}
+            className="rounded-xl bg-oro px-6 py-3 font-medium text-white transition-colors hover:bg-oro-hondo"
+          >
+            {t('comprar')}
+          </a>
+          <Link
+            href="/activar"
+            className="rounded-xl border border-borde bg-superficie px-6 py-3 font-medium transition-colors hover:bg-fondo-hondo"
+          >
+            {t('yaCompre')}
+          </Link>
+        </div>
+      </main>
+      <PieLegal />
+    </>
+  );
+}

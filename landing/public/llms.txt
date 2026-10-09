@@ -1,0 +1,20 @@
+# Abundance Code
+
+> App web que calcula tu carta natal, identifica el patrón que se repite en tu dinero, relaciones y decisiones, y lo convierte en una guía diaria personalizada dentro de un portal privado. Un pago inicial que incluye 30 días; después, suscripción mensual con renovación automática y cancelación desde la cuenta.
+
+## Páginas principales
+
+- [Inicio](https://abundancecode.us/): qué es Abundance Code y qué encuentras en tu portal.
+- [Cómo funciona](https://abundancecode.us/how-it-works): los cinco pasos, desde la fecha de nacimiento hasta la guía diaria.
+- [Tu portal](https://abundancecode.us/app): lecturas, patrón central, ciclos y guía personalizada.
+- [Precios](https://abundancecode.us/pricing): pago inicial, días incluidos y renovación mensual.
+- [Preguntas frecuentes](https://abundancecode.us/faq): carta natal, datos de nacimiento, acceso, pago y cancelación.
+- [Sobre nosotros](https://abundancecode.us/about)
+- [Contacto](https://abundancecode.us/contact)
+
+## Legal
+
+- [Términos y condiciones](https://abundancecode.us/terms)
+- [Política de privacidad](https://abundancecode.us/privacy)
+- [Reembolsos y cancelación](https://abundancecode.us/refund)
+- [Aviso legal](https://abundancecode.us/disclaimer)

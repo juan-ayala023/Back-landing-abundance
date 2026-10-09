@@ -1,0 +1,27 @@
+# Claves. Lo primero y lo que más importa: los .env llevan la clave de servicio
+# de Supabase, la de Stripe, la de OpenAI y la de Resend. Los .example sí van,
+# que para eso existen.
+.env
+.env.*
+!.env.example
+
+# Se regenera con npm install
+node_modules/
+
+# Se regenera con npm run build
+dist/
+.next/
+.next-verify/
+*.tsbuildinfo
+
+# Resultados de pruebas
+test-results/
+playwright-report/
+coverage/
+
+# Los zips que se suben a Hostinger: 70 MB que salen de dist/
+*.zip
+
+*.log
+npm-debug.log*
+.DS_Store

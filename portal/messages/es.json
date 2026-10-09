@@ -1,0 +1,722 @@
+{
+  "nav": {
+    "portal": "Mi Portal",
+    "lecturaBase": "Lectura Base",
+    "activacion": "Horóscopo personalizado",
+    "guia": "Guía Personalizada",
+    "cuenta": "Mi Cuenta",
+    "cerrarSesion": "Cerrar sesión",
+    "principal": "Navegación principal",
+    "menu": "Menú",
+    "cerrarMenu": "Cerrar el menú",
+    "volverAlPortal": "Volver a mi portal",
+    "dia": "Día {dia} de {total}",
+    "viaje": "Tu viaje",
+    "viajeTexto": "Estás construyendo tu nueva realidad día a día.",
+    "volverACuenta": "Volver a Mi Cuenta"
+  },
+  "idioma": {
+    "etiqueta": "Idioma",
+    "cambiar": "Cambiar idioma"
+  },
+  "home": {
+    "titulo": "Comprende lo que sientes. Descubre tus patrones.",
+    "descripcion": "Lecturas creadas desde tu carta natal para explorar lo que se repite y avanzar con más claridad.",
+    "entrar": "Entrar a mi portal",
+    "planes": "Descubrir Abundance Code",
+    "alt": "Una mujer consulta su portal de Abundance Code en el móvil, al atardecer."
+  },
+  "planes": {
+    "titulo": "Planes",
+    "descripcion": "La compra se realiza en nuestra web principal. Al terminar, vuelve aquí y entra con el correo que hayas usado al comprar (recibirás un enlace) o con Google si es ese mismo correo.",
+    "comprar": "Ir a comprar →",
+    "yaCompre": "Ya compré"
+  },
+  "activar": {
+    "titulo": "Te damos la bienvenida a Abundance Code",
+    "descripcion": "Crea tu cuenta o inicia sesión con el correo que usaste al comprar.",
+    "conToken": "Tu enlace de compra ya viene incluido: al entrar, tu acceso queda activado en esta cuenta.",
+    "sinToken": "Entres por correo o por Google, llegas a la misma cuenta: la del correo con el que compraste.",
+    "google": "Continuar con Google",
+    "conectando": "Conectando…",
+    "errorGoogle": "No pudimos conectar con Google. Revisa tu conexión y vuelve a intentarlo.",
+    "errores": {
+      "cancelado": "Cancelaste el inicio de sesión. Puedes volver a intentarlo cuando quieras.",
+      "sin_codigo": "Ese enlace de acceso ya no es válido. Entra desde aquí con tu correo o con Google.",
+      "sesion": "Ese enlace ya se usó o caducó. Escribe tu correo y te enviamos uno nuevo."
+    },
+    "confirmar": {
+      "titulo": "¿Vincular la compra a esta cuenta?",
+      "texto": "Tienes la sesión abierta como {correo}. Si vinculas la compra aquí, este será tu portal.",
+      "si": "Sí, vincular a esta cuenta",
+      "no": "No, entrar con otra cuenta"
+    },
+    "correo": {
+      "etiqueta": "Tu correo",
+      "placeholder": "correo@ejemplo.com",
+      "boton": "Continuar",
+      "enviando": "Enviando…",
+      "enviado": "Enviamos un enlace de acceso a {correo}. Ábrelo para entrar: vale una sola vez.",
+      "error": "No pudimos enviar el enlace. Revisa el correo y vuelve a intentarlo.",
+      "enviadoTitulo": "Revisa tu correo"
+    },
+    "o": "o"
+  },
+  "vincular": {
+    "tituloCaducado": "Tu enlace de acceso caducó",
+    "tituloInactivo": "Tu acceso no está activo",
+    "tituloSinCompra": "No encontramos tu compra",
+    "textoCaducado": "Los enlaces de acceso valen 30 días. Pide uno nuevo y entras enseguida: tu compra sigue ahí.",
+    "textoInactivo": "Encontramos tu compra, pero la suscripción no está activa ahora mismo.",
+    "textoSinCompra": "No hay ninguna compra registrada con este correo:",
+    "quePuedesHacer": "Qué puedes hacer",
+    "otroCorreo": "Si compraste con otro correo, entra con ese correo: escríbelo y recibirás un enlace, o usa Google si es el mismo.",
+    "otraCuenta": "Probar con otra cuenta",
+    "pedirEnlace": "Pedir un enlace nuevo",
+    "renovar": "Renovar mi acceso",
+    "comprar": "Comprar mi acceso",
+    "soporte": "¿Compraste y sigues viendo esto? Escríbenos a <enlace>{correo}</enlace> con el correo que usaste al pagar y lo vinculamos a mano."
+  },
+  "suscripcion": {
+    "necesita": "{seccion} necesita suscripción",
+    "mensaje": "Tu suscripción no está activa ahora mismo. Tu lectura base y tu carta natal siguen siendo tuyas y seguirán aquí. La guía personalizada y las activaciones diarias necesitan una suscripción activa.",
+    "continuar": "Continuar con suscripción →",
+    "volverLectura": "Volver a mi lectura base"
+  },
+  "legal": {
+    "privacidad": "Privacidad",
+    "terminos": "Términos",
+    "reembolsos": "Reembolsos",
+    "aviso": "Aviso legal"
+  },
+  "cuenta": {
+    "titulo": "Mi Cuenta",
+    "descripcion": "Administra tu información y el estado de tu portal.",
+    "nombre": "Nombre",
+    "email": "Email",
+    "plan": "Plan",
+    "completado": "{progreso}% completado",
+    "incluye": "Tu suscripción incluye tu lectura base y tu carta natal, tu lectura predictiva del mes, tu lectura personal de cada día y {consultas} consultas de guía al mes, cada una con dos preguntas para profundizar. Si algún día se cancela, tu lectura base y tu carta natal siguen siendo tuyas.",
+    "gestionar": "Gestionar mi suscripción",
+    "estados": {
+      "active": "Activo",
+      "trialing": "En periodo de prueba",
+      "past_due": "Pago pendiente",
+      "canceled": "Cancelado",
+      "incomplete": "Incompleto",
+      "none": "Sin acceso",
+      "cortesia": "Cortesía",
+      "ninguno": "Portal sin activar"
+    },
+    "portalError": "No hemos podido abrir la gestión de tu suscripción ahora mismo. Vuelve a intentarlo en unos minutos.",
+    "portalSinCompra": "No encontramos una suscripción asociada a tu cuenta.",
+    "portalSinStripe": "Tu acceso no está asociado a una suscripción de Stripe, así que no hay nada que gestionar desde aquí. Si crees que es un error, escríbenos.",
+    "pagoPendiente": "Tu último pago no se completó. Sigues teniendo acceso mientras se resuelve: actualiza tu tarjeta desde «Gestionar mi suscripción», no desde la página de precios, o se te cobraría una entrada nueva.",
+    "planes": {
+      "ninguno": "Sin plan",
+      "cortesia": "Acceso de cortesía",
+      "suscripcion": "Suscripción mensual",
+      "monthly": "Suscripción mensual",
+      "inactivo": "Suscripción no activa"
+    },
+    "incluyeCortesia": "Tienes acceso de cortesía: lo mismo que una suscripción —lectura base y carta natal, lectura del mes, lectura de cada día y {consultas} consultas de guía al mes con sus preguntas para profundizar— sin pago ni renovación que gestionar.",
+    "nacimiento": "Datos de nacimiento",
+    "sinHora": "hora desconocida",
+    "nombreGuardado": "Tu nombre quedó guardado. Como tu nacimiento no cambió, tu carta y tus lecturas siguen siendo las mismas.",
+    "activadoEl": "Activado el {fecha}",
+    "cambiarNombre": "Cambiar mi nombre",
+    "guardarNombre": "Guardar mi nombre",
+    "nombreError": "No pudimos guardar tu nombre. Vuelve a intentarlo.",
+    "solicitarCorreccion": "Solicitar una corrección",
+    "volverAEntrar": "Cómo volver a entrar",
+    "volverAEntrarTexto": "No tienes contraseña que recordar. Tu sesión se queda abierta en este dispositivo, así que puedes cerrar la página y volver cuando quieras. Si cambias de teléfono o de ordenador, o si cierras sesión, escribe tu correo en la pantalla de entrada y te mandamos un enlace para entrar de nuevo. Mientras la sesión siga abierta no te enviamos ningún correo.",
+    "genero": "Cómo te hablamos",
+    "sinGenero": "Sin marcar",
+    "cambiarGenero": "Cambiar cómo te hablamos",
+    "generoGuardado": "Guardado. Se aplica a tus próximas lecturas; las que ya están escritas se quedan como están.",
+    "generoError": "No pudimos guardarlo. Inténtalo de nuevo.",
+    "generos": {
+      "femenino": "En femenino",
+      "masculino": "En masculino",
+      "sin-decir": "Sin marcar género"
+    },
+    "corregirDatos": "Corregir mis datos"
+  },
+  "correccion": {
+    "titulo": "Solicitar una corrección",
+    "descripcion": "Para cambiar tu fecha, tu hora o tu lugar de nacimiento.",
+    "queVaAPasar": "Tu nombre puedes cambiarlo tú desde Mi Cuenta. La fecha, la hora y el lugar no: tu carta se calcula con ellos, y al cambiarlos habría que volver a calcularla y a escribir tu lectura base y tu retrato. Por eso lo revisamos antes. Mientras tanto no pierdes nada: tu carta, tus lecturas y tus consultas siguen donde están.",
+    "datoActual": "Lo que tenemos ahora",
+    "datoActualAyuda": "Es lo que hay guardado. Puedes dejarlo tal cual.",
+    "datoCorrecto": "Lo correcto",
+    "datoCorrectoAyuda": "Escríbelo completo: fecha, hora y ciudad.",
+    "datoCorrectoEjemplo": "15 de junio de 1992 · 08:30 · Bogotá, Colombia",
+    "motivo": "Qué pasó (opcional)",
+    "motivoAyuda": "Si quieres contarnos de dónde salió el dato correcto, nos ayuda.",
+    "confirmacion": "Confirmo que son mis propios datos de nacimiento.",
+    "enviar": "Enviar mi solicitud",
+    "enviando": "Enviando…",
+    "enviadaTitulo": "Solicitud recibida",
+    "enviadaTexto": "La revisamos y te escribimos al correo de tu cuenta. Hasta entonces tu carta y tus lecturas siguen siendo las que ya tienes.",
+    "volver": "Volver a Mi Cuenta",
+    "faltanDatos": "Completa los dos datos y confirma que son tuyos.",
+    "sinSesion": "Tu sesión expiró. Vuelve a entrar.",
+    "error": "No pudimos registrar tu solicitud. Vuelve a intentarlo en unos minutos.",
+    "recienCorregido": "Acabas de corregir tus datos, así que por ahora no puedes volver a cambiarlos tú: se puede una vez al día. Si hay algo que arreglar antes, cuéntanoslo aquí y lo hacemos nosotros."
+  },
+  "portal": {
+    "bienvenida": "Te damos la bienvenida a tu portal",
+    "bienvenidaConNombre": "Te damos la bienvenida a tu portal, {nombre}",
+    "subtitulo": "Este es tu espacio privado de lectura, claridad y alineación.",
+    "primerPaso": "Primer paso",
+    "completaDatos": "Completa tus datos de nacimiento",
+    "completaDatosTexto": "Sin fecha, hora y lugar no podemos calcular tu carta. Es lo único que necesitamos de ti.",
+    "empezar": "Empezar",
+    "verCartaCompleta": "Ver mi carta natal completa",
+    "trasDatos": "Disponible cuando completes tus datos de nacimiento.",
+    "trasDatosCorto": "Disponible tras completar tus datos.",
+    "pronosticoTitulo": "Tu Pronóstico",
+    "pronosticoTexto": "Las fechas de los próximos 30 días en que se activan áreas de tu vida, y de qué forma podrían manifestarse.",
+    "verPronostico": "Ver mi pronóstico",
+    "activacionTitulo": "Mi horóscopo de hoy",
+    "activacionTexto": "Una lectura breve para comprender lo que sientes y elegir cómo acompañarte hoy.",
+    "leerActivacion": "Leer activación completa",
+    "guia": "Guía Personalizada",
+    "guiaTexto": "Hazme una pregunta sobre tus decisiones, bloqueos o señales que estás recibiendo.",
+    "hacerPregunta": "Hacer una pregunta",
+    "cierre": "✦ No se trata de cambiar quién eres, sino de recordar tu código y alinearte con él. ✦",
+    "faltaLecturaSobre": "Tu lectura está pendiente",
+    "faltaLectura": "Tu lectura base todavía no está escrita",
+    "faltaLecturaTexto": "Tu carta ya está calculada. Escribir la lectura tarda entre uno y tres minutos, y es tuya para siempre.",
+    "faltaLecturaAccion": "Escribirla ahora",
+    "lecturaPersonal": "Tu lectura personal",
+    "lecturaPersonalTexto": "La interpretación escrita desde tu carta: tu energía, tus patrones, tus bloqueos y un primer paso.",
+    "leerLectura": "Leer mi lectura"
+  },
+  "areas": {
+    "titulo": "Tus cinco áreas",
+    "subtitulo": "Dónde vive cada una en tu carta. Toca una para preguntarle a tu guía.",
+    "abundancia": "Abundancia y dinero",
+    "decisiones": "Decisiones",
+    "proposito": "Propósito",
+    "bloqueos": "Bloqueos internos",
+    "relaciones": "Relaciones y vínculos",
+    "casa": "Casa {numero}",
+    "medioCielo": "Medio Cielo",
+    "en": "en",
+    "preguntas": {
+      "abundancia": "¿Qué patrón se repite en mi relación con el dinero?",
+      "decisiones": "¿Qué decisión estoy evitando y qué me frena de verdad?",
+      "proposito": "¿Hacia dónde apunta mi carta cuando pienso en mi propósito?",
+      "bloqueos": "¿Qué bloqueo interno se me repite y de dónde viene?",
+      "relaciones": "¿Qué patrón repito en mis vínculos?"
+    }
+  },
+  "lectura": {
+    "traducirError": "No pudimos preparar la traducción ahora mismo. Vuelve a intentarlo en un momento.",
+    "escritaEn": "Esta lectura se escribió en {idioma}. Puedes leerla así o pedir la versión en {destino}.",
+    "traducir": "Ver en {destino}",
+    "traduciendo": "Preparando la versión en {destino}…",
+    "traducidaAviso": "Versión en {destino} de tu lectura original, escrita en {idioma}.",
+    "verCarta": "Ver mi carta natal (rueda y tabla)",
+    "ocultarCarta": "Ocultar la carta",
+    "titulo": "Tu Lectura Base Personalizada",
+    "descripcion": "Una interpretación creada desde tu Código Natal para ayudarte a entender tus patrones, bloqueos y áreas de expansión.",
+    "cartaPendiente": "Tu carta todavía no está calculada. Se calcula sola en cuanto completas tus datos de nacimiento; si ya lo hiciste, vuelve a entrar en un momento.",
+    "enEstaLectura": "En esta lectura",
+    "resumen": "Resumen de tu Código Personal",
+    "noGenerada": "Tu lectura todavía no está escrita. Estas son las secciones que tendrá. Si acabas de completar tus datos, tarda alrededor de un minuto: vuelve a entrar en un momento.",
+    "secciones": {
+      "energiaPrincipal": "Tu energía principal",
+      "mundoEmocional": "Tu mundo emocional",
+      "patronesAbundancia": "Abundancia y dinero",
+      "amorVinculos": "Amor y vínculos",
+      "bloqueosInternos": "Patrones repetidos",
+      "senalesPersonales": "Tus señales personales",
+      "aprendizajeKarmico": "Aprendizaje kármico",
+      "formaDecidir": "Tu forma de decidir",
+      "fortalezas": "Tus fortalezas",
+      "recomendacionInicial": "Tu siguiente paso"
+    },
+    "ampliar": {
+      "titulo": "Tu lectura puede crecer: {n} apartados nuevos",
+      "texto": "Después de escribirse la tuya añadimos estos apartados: {secciones}. Se escriben sobre tu misma carta y no cambian ni una palabra de lo que ya tienes.",
+      "boton": "Añadir los apartados nuevos",
+      "escribiendo": "Escribiéndolos…",
+      "error": "No hemos podido escribirlos ahora mismo. Vuelve a intentarlo en unos minutos; tu lectura sigue intacta.",
+      "reintentar": "Intentar de nuevo",
+      "requiereSuscripcion": "Los apartados nuevos se escriben con una suscripción activa. Tu lectura y tu carta siguen siendo tuyas."
+    },
+    "generarAhora": "Escribir mi lectura ahora",
+    "verContexto": "Ver el contexto astrológico",
+    "ocultarContexto": "Ocultar el contexto astrológico",
+    "idiomas": {
+      "es": "español",
+      "en": "inglés"
+    },
+    "explorarCasas": "Explorar mis doce casas",
+    "dondeLaOtra": "Esta es la interpretación completa. El detalle técnico de la carta, posición por posición, está en Tu Carta Natal."
+  },
+  "activacion": {
+    "preparando": "Estamos preparando tu lectura de hoy. Suele tardar menos de un minuto.",
+    "noLista": "Tu lectura todavía no está lista. Puedes intentarlo nuevamente ahora. Si sales de esta página, seguiremos preparándola.",
+    "reintentar": "Intentar de nuevo",
+    "volverAlPortal": "Volver a mi portal",
+    "requiereSuscripcion": "Tu lectura de hoy se prepara con una suscripción activa. Tu carta y tu lectura base siguen siendo tuyas.",
+    "titulo": "Mi horóscopo personalizado",
+    "descripcion": "Qué podría moverse hoy y qué señal conviene mirar.",
+    "seccion": "El horóscopo personalizado",
+    "bloques": {
+      "senal": "La señal",
+      "evita": "Evita",
+      "activa": "Activa",
+      "queSeMueve": "Qué se mueve hoy en tu carta"
+    },
+    "sinCarta": "Tu activación llegará en cuanto tu carta esté calculada.",
+    "siguiente": "Tu próxima lectura se desbloquea mañana.",
+    "reglaDia": "El día cambia a medianoche en tu hora local ({zona}); el contador de consultas de la guía cambia a la misma hora.",
+    "descripcionMes": "Qué se mueve este mes, cuándo y en qué área de tu vida.",
+    "pestanas": "Tus dos lecturas",
+    "pestanaHoy": "Mi lectura de hoy",
+    "pestanaMes": "Mi lectura del mes",
+    "vigencia": "Esta lectura cubre del {periodo}. La siguiente se escribirá el {siguiente}."
+  },
+  "guia": {
+    "titulo": "Guía Personalizada",
+    "descripcion": "Consulta tu Código Personal cuando necesites claridad sobre una decisión, un bloqueo o una señal que estás viviendo.",
+    "seccion": "La guía personalizada",
+    "consultar": "Consultar mi guía",
+    "consultando": "Consultando tu Código Personal…",
+    "intro": "Cuéntanos qué estás viviendo. Explora una mirada desde tu carta y un pequeño paso que puedas hacer tuyo.",
+    "historial": {
+      "titulo": "Mis consultas",
+      "nota": "Todo lo que has preguntado y lo que te respondió tu guía. Releerlas no gasta ninguna consulta.",
+      "vacio": "Todavía no has hecho ninguna consulta. Cuando la hagas, quedará guardada aquí con su respuesta.",
+      "sinRespuesta": "Esta consulta se quedó sin respuesta.",
+      "mensajes": "{n} mensajes"
+    },
+    "profundizar": "Profundizar en este tema"
+  },
+  "generando": {
+    "duracion": "Suele tardar entre uno y tres minutos.",
+    "bienvenidaTitulo": "Te damos la bienvenida a tu portal, {nombre}.",
+    "bienvenidaTituloSinNombre": "Te damos la bienvenida a tu portal.",
+    "bienvenidaTexto": "Tu carta y tu lectura personal ya están listas.",
+    "bienvenidaBoton": "Entrar a mi portal",
+    "pasos": {
+      "carta": {
+        "titulo": "Calculando tu carta natal",
+        "descripcion": "Posicionando planetas, casas y aspectos."
+      },
+      "interpretando": {
+        "titulo": "Interpretando tu carta",
+        "descripcion": "Leyendo lo que dice de ti, pieza a pieza."
+      },
+      "lectura": {
+        "titulo": "Preparando tu lectura personal",
+        "descripcion": "Escribiendo tus patrones, tus fortalezas y tu primer paso."
+      },
+      "portal": {
+        "titulo": "Tu portal está listo",
+        "descripcion": "Abriendo tu espacio personal de lectura."
+      }
+    },
+    "error": "No hemos podido preparar tu lectura.",
+    "errorTexto": "Vuelve a intentarlo en unos minutos; tus datos y tu carta están guardados.",
+    "lista": "Tu lectura está lista. Abriéndola…",
+    "esperando": "Interpretando tu carta. Es el paso más largo de los {total}: puede tardar dos o tres minutos. Puedes quedarte o irte — se sigue escribiendo igual, y la encontrarás terminada al volver.",
+    "paso": "Paso {n} de {total}",
+    "progresoLabel": "Progreso de tu lectura",
+    "titulo": "Preparando tu lectura",
+    "descripcion": "Estamos calculando tu carta y creando tu interpretación. Suele tardar entre uno y tres minutos.",
+    "cabecera1": "Estamos preparando tu",
+    "cabecera2": "lectura personal",
+    "cabeceraTexto": "Conectando los datos de tu nacimiento con los patrones que darán forma a tu guía personalizada.",
+    "completado": "Completado",
+    "reintentar": "Volver a intentarlo"
+  },
+  "guia_form": {
+    "pregunta": "¿Qué necesitas entender hoy?",
+    "placeholder": "Escribe tu pregunta aquí…",
+    "sugeridasTitulo": "— Preguntas sugeridas —",
+    "restantes": "Te quedan <b>{n}</b> consultas este mes. Cada consulta incluye tu pregunta y {seguimientos} preguntas para profundizar; releer una respuesta guardada no gasta ninguna.",
+    "agotadas": "Has usado tus {total} consultas de este mes. Vuelven con tu próximo ciclo; mientras tanto puedes releer las anteriores más abajo.",
+    "responde": "Tu guía responde",
+    "aviso": "La Guía Personalizada está diseñada para reflexión personal y claridad interna. No reemplaza asesoría médica, legal, financiera o psicológica profesional.",
+    "sugeridas": {
+      "bloqueo": "¿Qué bloqueo necesito observar ahora?",
+      "decision": "¿Qué decisión estoy evitando?",
+      "patron": "¿Qué patrón de abundancia estoy repitiendo?",
+      "senal": "¿Qué señal debería mirar esta semana?",
+      "energia": "¿Qué energía necesito activar hoy?"
+    },
+    "preguntaSeguimiento": "¿Qué más quieres saber sobre esto?",
+    "placeholderSeguimiento": "Pregunta otra cosa sobre este mismo tema…",
+    "agotadasError": "Has usado tus consultas de este mes. Vuelven con tu próximo ciclo.",
+    "puedesSeguir": "Puedes hacer {n} preguntas más sobre este tema.",
+    "temaCerrado": "Has usado las dos preguntas de este tema. Para abrir otro, recarga la página.",
+    "aclaracionNoGasta": "Tu guía necesita un dato para responderte. Contestar esto no gasta ninguna consulta.",
+    "preguntaDeVuelta": "Tu guía necesita saber",
+    "sinCarta": "Tu carta todavía no está calculada. Vuelve en un momento.",
+    "seguimientosAgotados": "Ya has hecho las dos preguntas de profundizar de este tema."
+  },
+  "carta": {
+    "sol": "Sol",
+    "luna": "Luna",
+    "ascendente": "Ascendente",
+    "sinHora": "Necesita tu hora exacta de nacimiento.",
+    "titulo": "Tu Carta Natal",
+    "sinHoraAviso": "Tu carta se calculó <b>sin hora de nacimiento</b>, así que muestra las posiciones de los planetas pero no las casas, el ascendente ni el medio cielo. Si algún día la averiguas, <enlace>puedes añadirla</enlace> y se recalcula.",
+    "noCalculada": "<b>No hemos podido calcular tu carta.</b> Suele deberse a que la fecha, la hora o el lugar de nacimiento no encajan entre sí. Revísalos y volvemos a intentarlo.",
+    "revisarDatos": "Revisar mis datos de nacimiento",
+    "tuCartaNatal": "Tu carta natal",
+    "queEsto": "Aquí está el dibujo de tu cielo al nacer y sus posiciones exactas.",
+    "dondeLaOtra": "La interpretación completa —qué significa todo esto para ti— está en tu Lectura Base."
+  },
+  "casas": {
+    "titulo": "Tus doce casas",
+    "descripcion": "Los doce terrenos de una vida. La carta dice en qué signo empieza cada uno y qué planetas tienes dentro.",
+    "ayuda": "Toca una casa para leerla.",
+    "numero": "Casa {n}",
+    "sinHora": "Las casas se calculan con la hora exacta de nacimiento. Tu carta se hizo sin ella, así que aquí se explica qué es cada casa, pero no se dice cuál es tu signo en ella: sería inventarlo.",
+    "cuspide": "Empieza en {grado}° de {signo}",
+    "recorre": "También recorre {signos}.",
+    "sinPlanetas": "Sin planetas dentro.",
+    "conPlanetas": "Dentro tienes {planetas}.",
+    "sistema": "Casas por {sistema}.",
+    "sistemas": {
+      "placidus": "Placidus",
+      "whole-sign": "signos enteros",
+      "koch": "Koch",
+      "equal": "casas iguales"
+    },
+    "lista": [
+      {
+        "nombre": "Tú y cómo te presentas",
+        "texto": "Es tu forma de entrar en cualquier sitio: lo que otros notan antes de que hables. Habla también de cómo empiezas las cosas. Puede no parecerse a lo que sientes por dentro, y las dos son verdad."
+      },
+      {
+        "nombre": "Tu dinero y tus recursos",
+        "texto": "Lo que ganas, lo que gastas y lo que crees que vale tu trabajo. También lo que das por tuyo: el talento con el que cuentas sin pedir permiso."
+      },
+      {
+        "nombre": "Tu voz y lo que aprendes",
+        "texto": "Cómo hablas, cómo escribes y cómo te enteras de las cosas. Aquí están los hermanos, la gente cercana y los trayectos cortos: la vida de todos los días."
+      },
+      {
+        "nombre": "Tu casa y tus raíces",
+        "texto": "De dónde vienes y qué te hace sentir en casa. Habla de la familia y del sitio donde te recoges cuando el día se acaba."
+      },
+      {
+        "nombre": "Lo que te enciende",
+        "texto": "Lo que haces porque te da gusto: crear, jugar, gustar, arriesgarte. Aquí están los hijos, lo que nace de ti y la parte que quiere que se la vea."
+      },
+      {
+        "nombre": "Tu día a día y tu cuerpo",
+        "texto": "La rutina, el trabajo concreto y cómo te cuidas. Habla de lo que sostienes cada día y de lo que tu cuerpo avisa cuando te pasas."
+      },
+      {
+        "nombre": "Tus vínculos de tú a tú",
+        "texto": "La pareja, los socios y quien se te pone enfrente. Aquí se ve qué buscas en el otro, y también qué te devuelve de ti."
+      },
+      {
+        "nombre": "Lo que compartes y lo que sueltas",
+        "texto": "El dinero que no es solo tuyo, la intimidad y los finales. Habla de lo que cambia de manos y de lo que se transforma cuando algo se acaba."
+      },
+      {
+        "nombre": "Lo que te abre el mundo",
+        "texto": "Los viajes largos, los estudios y lo que crees. Aquí está la búsqueda de sentido: lo que te saca de tu terreno conocido, por fuera o por dentro."
+      },
+      {
+        "nombre": "Tu lugar en el mundo",
+        "texto": "La profesión, el reconocimiento y lo que otros esperan de ti. Habla de la dirección a la que apunta tu vida cuando se mira de lejos."
+      },
+      {
+        "nombre": "Tu gente y lo que viene",
+        "texto": "Los amigos, los grupos y los planes a futuro. Aquí está el apoyo que no es de familia y aquello hacia lo que caminas con otros."
+      },
+      {
+        "nombre": "Tu mundo de dentro",
+        "texto": "Lo que no se ve: el descanso, el silencio y lo que cargas sin nombrarlo. Habla de lo que se cierra para que pueda empezar otra cosa."
+      }
+    ]
+  },
+  "signos": {
+    "aries": "Aries",
+    "tauro": "Tauro",
+    "geminis": "Géminis",
+    "cancer": "Cáncer",
+    "leo": "Leo",
+    "virgo": "Virgo",
+    "libra": "Libra",
+    "escorpio": "Escorpio",
+    "sagitario": "Sagitario",
+    "capricornio": "Capricornio",
+    "acuario": "Acuario",
+    "piscis": "Piscis"
+  },
+  "mes": {
+    "titulo": "Mi lectura del mes",
+    "seccion": "La lectura del mes",
+    "aunNo": "Todavía no has pedido tu lectura del mes",
+    "queEs": "Calculamos los tránsitos de los próximos 30 días sobre tu carta y encontramos las fechas en que se concentran. Después te contamos de qué va tu mes: qué empieza a moverse, cómo avanza, qué puede pasar en cada área y qué días conviene mirar. Tarda dos o tres minutos y queda guardada durante todo el periodo.",
+    "escribir": "Preparar mi lectura del mes",
+    "escribiendo": "Calculando los tránsitos del mes y escribiendo tu lectura. Suele tardar entre uno y dos minutos.",
+    "noDisponible": "No hemos podido preparar tu lectura del mes ahora mismo. Puedes intentarlo de nuevo.",
+    "reintentar": "Volver a intentarlo",
+    "sinCarta": "Tu lectura del mes llegará en cuanto tu carta esté calculada.",
+    "requiereSuscripcion": "La lectura del mes se prepara con una suscripción activa. Tu carta y tu lectura base siguen siendo tuyas.",
+    "queEmpiezaAMoverse": "Qué empieza a moverse",
+    "comoAvanza": "Cómo avanza el mes",
+    "primeraParte": "Primera parte",
+    "mitadDelMes": "Mitad del mes",
+    "finalDelMes": "Final del mes",
+    "porAreas": "Por áreas de tu vida",
+    "abundancia": "Abundancia y dinero",
+    "amor": "Amor y vínculos",
+    "trabajo": "Trabajo y propósito",
+    "mundoEmocional": "Mundo emocional",
+    "diasImportantes": "Días importantes",
+    "senal": "La señal:",
+    "favorece": "Favorece:",
+    "cuidadoCon": "Cuidado con:",
+    "diasFavorables": "Días favorables",
+    "diasCuidado": "Días de cuidado",
+    "patronKarmico": "El patrón kármico del mes",
+    "oportunidad": "Tu oportunidad principal",
+    "advertencia": "Tu advertencia principal",
+    "tresAcciones": "Tres cosas concretas",
+    "nivel": {
+      "alta": "Intensidad alta",
+      "media": "Intensidad media",
+      "observar": "Para observar"
+    },
+    "aviso": "Las fechas salen del cálculo de los tránsitos reales sobre tu carta. Lo que se describe son posibilidades con respaldo astrológico, no hechos garantizados: la decisión y la lectura de lo que ocurra siguen siendo tuyas.",
+    "puedesIrte": "Puedes seguir navegando o cerrar: se sigue escribiendo y la encontrarás aquí al volver.",
+    "fechasDestacadas": "Fechas señaladas:",
+    "verDetalle": "Ver el detalle de este día"
+  },
+  "retrato": {
+    "escribir": "Escribir mi retrato",
+    "escribiendo": "Escribiendo tu retrato… suele tardar entre uno y tres minutos. Puedes seguir navegando; quedará guardado.",
+    "reintentar": "Volver a intentarlo",
+    "titulo": "Quién eres, según tu carta",
+    "descripcion": "Un recorrido por tu carta pieza a pieza: qué función cumple cada planeta en tu forma de ser, de pensar, de querer y de actuar.",
+    "pendiente": "Estamos escribiendo tu retrato a partir de tu carta. La primera vez tarda entre uno y tres minutos; después queda guardado.",
+    "noDisponible": "No hemos podido preparar tu retrato ahora mismo. Puedes intentarlo de nuevo cuando quieras.",
+    "requiereSuscripcion": "Tu retrato se escribe con una suscripción activa. Tu carta y tu lectura base siguen siendo tuyas.",
+    "titulos": {
+      "sol": "Tu forma de ser",
+      "luna": "Tu mundo emocional",
+      "ascendente": "Cómo te ven al llegar",
+      "mercurio": "Cómo piensas y cómo hablas",
+      "venus": "Cómo quieres y qué valoras",
+      "marte": "Cómo actúas y afrontas los conflictos",
+      "jupiter": "Dónde te expandes",
+      "saturno": "Tu lección y tu límite",
+      "habilidades": "Tus habilidades",
+      "nudo": "Tu nudo central"
+    },
+    "marcas": {
+      "sol": "Sol en",
+      "luna": "Luna en",
+      "ascendente": "Ascendente en",
+      "mercurio": "Mercurio en",
+      "venus": "Venus en",
+      "marte": "Marte en",
+      "jupiter": "Júpiter en",
+      "saturno": "Saturno en",
+      "habilidades": "Aspectos y elementos",
+      "nudo": "Los aspectos más cerrados"
+    }
+  },
+  "cielo": {
+    "sobretitulo": "El cielo de hoy",
+    "titulo": "Lo que hoy toca tu carta",
+    "linea": "{planeta} en {signo} hace {aspecto} a tu {natal} natal.",
+    "explicacion": {
+      "conjuncion": "Hoy se juntan {mueve} y {tuyo}: ese tema pasa al primer plano.",
+      "sextil": "Hoy se abre una puerta entre {mueve} y {tuyo}: puede costarte menos dar un paso que venías posponiendo.",
+      "cuadratura": "Hoy puedes notar tensión entre {mueve} y {tuyo}: algo pide un pequeño ajuste.",
+      "trigono": "Hoy encajan {mueve} y {tuyo}: lo que necesitas decir sale con menos esfuerzo.",
+      "oposicion": "Hoy tiran en direcciones distintas {mueve} y {tuyo}: el día pide equilibrio."
+    },
+    "mueve": {
+      "sol": "la energía del día",
+      "luna": "el ánimo del día",
+      "mercurio": "lo que se piensa y se habla",
+      "venus": "el gusto y el afecto",
+      "marte": "el empuje del día",
+      "jupiter": "las ganas de más",
+      "saturno": "tus responsabilidades",
+      "urano": "lo que se sale del guion",
+      "neptuno": "la sensibilidad del día",
+      "pluton": "lo que se remueve por debajo"
+    },
+    "tuyo": {
+      "sol": "tu identidad",
+      "luna": "tu mundo emocional",
+      "mercurio": "tu manera de pensar",
+      "venus": "tu manera de querer",
+      "marte": "tu manera de actuar",
+      "jupiter": "tu confianza",
+      "saturno": "tu sentido del límite",
+      "urano": "tu necesidad de libertad",
+      "neptuno": "lo que imaginas posible",
+      "pluton": "tu fondo más profundo"
+    },
+    "sinAspectos": "Hoy ningún planeta se acerca a un punto de tu carta. Es un día de fondo tranquilo: lo que se mueva, se mueve desde dentro.",
+    "pie": "Calculado con el cielo real de hoy sobre tu carta de nacimiento."
+  },
+  "cuerpos": {
+    "sol": "Sol",
+    "luna": "Luna",
+    "mercurio": "Mercurio",
+    "venus": "Venus",
+    "marte": "Marte",
+    "jupiter": "Júpiter",
+    "saturno": "Saturno",
+    "urano": "Urano",
+    "neptuno": "Neptuno",
+    "pluton": "Plutón"
+  },
+  "aspectos": {
+    "conjuncion": "conjunción",
+    "sextil": "sextil",
+    "cuadratura": "cuadratura",
+    "trigono": "trígono",
+    "oposicion": "oposición"
+  },
+  "equilibrio": {
+    "titulo": "Tu equilibrio elemental",
+    "dominante": {
+      "fuego": "El fuego predomina en tu carta: el impulso, el entusiasmo y las ganas de empezar pesan más en tu forma de estar.",
+      "tierra": "La tierra predomina en tu carta: lo práctico, lo tangible y lo que se sostiene en el tiempo pesan más en tu forma de estar.",
+      "aire": "El aire predomina en tu carta: las ideas, la palabra y el vínculo con los demás pesan más en tu forma de estar.",
+      "agua": "El agua predomina en tu carta: la emoción, la intuición y la memoria pesan más en tu forma de estar."
+    },
+    "ausente": {
+      "fuego": "No hay ningún planeta en fuego: el impulso y el entusiasmo no te vienen dados, los construyes tú.",
+      "tierra": "No hay ningún planeta en tierra: lo práctico y lo que se sostiene no te vienen dados, los construyes tú.",
+      "aire": "No hay ningún planeta en aire: la distancia para pensar y la palabra no te vienen dadas, las construyes tú.",
+      "agua": "No hay ningún planeta en agua: la conexión con lo que sientes no te viene dada, la construyes tú."
+    },
+    "repartido": "Tu carta reparte sus fuerzas: ningún elemento manda sobre los demás."
+  },
+  "elementos": {
+    "fuego": "Fuego",
+    "tierra": "Tierra",
+    "aire": "Aire",
+    "agua": "Agua"
+  },
+  "tabla": {
+    "leyenda": "Posiciones planetarias de la carta natal",
+    "planeta": "Planeta",
+    "signo": "Signo",
+    "grado": "Grado",
+    "casa": "Casa",
+    "retrogrado": "retrógrado"
+  },
+  "rueda": {
+    "titulo": "Carta natal",
+    "descripcionExacta": "Rueda astrológica con los doce signos, {planetas} planetas, las doce casas, el Ascendente y el Medio Cielo. Debajo hay una tabla con las mismas posiciones en texto.",
+    "descripcionParcial": "Rueda astrológica con los doce signos y {planetas} planetas, sin casas, porque no se conoce la hora de nacimiento. Debajo hay una tabla con las mismas posiciones en texto.",
+    "pieParcial": "Esta carta se calculó sin hora de nacimiento. Las posiciones de los planetas son correctas, pero <b>no incluye casas, Ascendente ni Medio Cielo</b>: esos dependen de la hora exacta.",
+    "enSigno": "{cuerpo} en {signo}",
+    "enSignoRetrogrado": "{cuerpo} en {signo}, retrógrado",
+    "ascendente": "Ascendente",
+    "medioCielo": "Medio Cielo"
+  },
+  "onboarding": {
+    "dia": "Día",
+    "mes": "Mes",
+    "anio": "Año",
+    "fechaNoValida": "Esa fecha no existe. Revisa el día, el mes y el año.",
+    "horaDesconocidaCorto": "hora desconocida",
+    "confirmar": {
+      "titulo": "Vamos a crear tu carta con estos datos, {nombre}:",
+      "aviso": "Revisa que estén correctos. Después de crear tu carta, cualquier corrección deberá ser revisada por soporte.",
+      "crear": "Confirmar y crear mi carta",
+      "corregir": "Corregir un dato"
+    },
+    "meses": [
+      "Enero",
+      "Febrero",
+      "Marzo",
+      "Abril",
+      "Mayo",
+      "Junio",
+      "Julio",
+      "Agosto",
+      "Septiembre",
+      "Octubre",
+      "Noviembre",
+      "Diciembre"
+    ],
+    "titulo": "Tus datos de nacimiento",
+    "descripcion": "Con esto calculamos tu carta natal. La hora y el lugar importan tanto como la fecha: determinan la posición exacta del cielo sobre ti.",
+    "nombre": "Nombre completo",
+    "fecha": "Fecha de nacimiento",
+    "hora": "Hora de nacimiento",
+    "horaDesconocida": "No sé mi hora de nacimiento",
+    "avisoSinHora": "Usaremos como referencia las posiciones calculadas para el mediodía de ese día. Sin la hora exacta <b>no podremos incluir las casas, el ascendente ni el medio cielo</b>. Lo verás señalado en tu carta.",
+    "ciudad": "Ciudad de nacimiento",
+    "ciudadPlaceholder": "Empieza a escribir y elige de la lista",
+    "guardando": "Guardando…",
+    "continuar": "Continuar",
+    "editar": {
+      "titulo": "Corregir mis datos de nacimiento",
+      "descripcion": "Revisa y cambia lo que haga falta. Lo que ves es lo que hay guardado ahora.",
+      "aviso": "Si cambias la <b>fecha, la hora o el lugar</b>, tu carta se recalcula y tu lectura base y tu retrato se vuelven a escribir sobre la carta nueva. <b>Las versiones anteriores no se pierden</b>: quedan guardadas y las puedes releer en tu lectura y en tu carta. Tus consultas de guía se conservan. Si solo cambias el nombre, nada se vuelve a escribir.",
+      "guardar": "Guardar cambios",
+      "cancelar": "Volver a Mi Cuenta sin cambiar nada",
+      "espera": "Ya corregiste tus datos hace poco. Podrás volver a hacerlo a partir del {cuando}. Si necesitas cambiarlos antes, escríbenos y lo hacemos nosotros."
+    },
+    "genero": "¿Cómo prefieres que te hablemos?",
+    "generoAyuda": "Tus lecturas te hablan de tú, y esto decide si lo hacen en femenino, en masculino o sin marcar género. Puedes cambiarlo cuando quieras.",
+    "generos": {
+      "femenino": "En femenino",
+      "masculino": "En masculino",
+      "sin-decir": "Prefiero no decirlo"
+    }
+  },
+  "versiones": {
+    "titulo": {
+      "lectura": "Versiones anteriores de tu lectura",
+      "retrato": "Versiones anteriores de tu retrato"
+    },
+    "nota": "Se retiraron al corregir tus datos de nacimiento. Se conservan tal como se escribieron.",
+    "retirada": "Retirada el {fecha}",
+    "escritaCon": "Escrita con los datos: {nacimiento}",
+    "sinHora": "hora desconocida",
+    "resumen": "Resumen",
+    "apertura": "Apertura"
+  },
+  "descarga": {
+    "descargar": "Descargar imagen",
+    "preparando": "Preparando…",
+    "descargada": "Descargada",
+    "confirmacion": "Tu carta se guardó como {archivo}. Búscala en la carpeta de descargas.",
+    "error": "No pudimos generar la imagen. Vuelve a intentarlo."
+  },
+  "errorPantalla": {
+    "titulo": "Algo no ha cargado bien",
+    "texto": "Puede ser un corte momentáneo de conexión. Lo que ya habías guardado —tu lectura, tus consultas— sigue ahí.",
+    "reintentar": "Volver a cargar",
+    "portal": "Ir a mi portal"
+  },
+  "titulos": {
+    "activacion": "Mi horóscopo personalizado",
+    "carta": "Tu carta natal",
+    "correccion": "Solicitar una corrección",
+    "cuenta": "Mi cuenta",
+    "generando": "Preparando tu lectura",
+    "guia": "Guía personalizada",
+    "lecturaBase": "Tu lectura base",
+    "onboarding": "Tus datos de nacimiento",
+    "portal": "Tu portal",
+    "planes": "Planes",
+    "activar": "Activar tu acceso",
+    "vincular": "Vincula tu compra"
+  }
+}

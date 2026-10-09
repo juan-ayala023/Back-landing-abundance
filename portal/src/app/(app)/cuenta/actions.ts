@@ -1,0 +1,163 @@
+"use server";
+
+import { headers } from "next/headers";
+import { redirect } from "next/navigation";
+
+import type { EstadoGenero, EstadoNombre } from "./estado";
+
+import { entitlementDe, resolveAccess } from "@/lib/access/entitlement";
+import { urlDelPortalDeFacturacion } from "@/lib/access/landing";
+import { generoParaLaVoz } from "@/lib/lectura/genero";
+import { createClient } from "@/lib/supabase/server";
+
+/**
+ * Lleva al portal de facturación de Stripe.
+ *
+ * Cancelar, cambiar la tarjeta y ver facturas son tres pantallas que **no hay
+ * que construir**: las sirve Stripe, y el backend de la landing es quien abre
+ * la sesión porque es quien tiene el `stripe_customer_id`. Esta app no toca
+ * Stripe ni necesita ninguna de sus claves.
+ *
+ * El correo sale de la sesión, nunca de un campo del formulario: si viniera del
+ * cliente, cualquiera podría pedir el portal de otra persona y acabar viendo
+ * —y cancelando— una suscripción ajena.
+ */
+export async function abrirPortalDeFacturacion() {
+  const acceso = await resolveAccess();
+  const entitlement = entitlementDe(acceso);
+
+  if (!entitlement) redirect("/cuenta?portal=sin-compra");
+
+  /*
+   * Se le dice a dónde volver: a esta misma pantalla. El host público viaja en
+   * `x-forwarded-host` porque detrás del proxy la URL interna es otra.
+   */
+  const cabeceras = await headers();
+  const host = cabeceras.get("x-forwarded-host") ?? cabeceras.get("host");
+  const protocolo = cabeceras.get("x-forwarded-proto") ?? "https";
+  const vuelta = host ? `${protocolo}://${host}/cuenta` : undefined;
+
+  const portal = await urlDelPortalDeFacturacion(entitlement.email, vuelta);
+
+  // Sin URL no se inventa nada: se vuelve diciendo qué pasó.
+  if (!portal.ok) {
+    redirect(
+      portal.motivo === "no-encontrado"
+        ? "/cuenta?portal=sin-stripe"
+        : "/cuenta?portal=error",
+    );
+  }
+
+  redirect(portal.url);
+}
+
+/**
+ * Cambia el nombre con el que le hablan las lecturas.
+ *
+ * Es el único dato del alta que se puede cambiar sin pasar por soporte, y la
+ * razón es que no afecta a nada calculado: la carta sale de la fecha, la hora
+ * y el lugar. Cambiar una letra del nombre no invalida nada.
+ *
+ * Se guarda en `portals.full_name` y no en el perfil: es el que usan las
+ * lecturas, y el del perfil viene de Google.
+ *
+ * **Devuelve el nombre guardado en vez de redirigir.** Redirigiendo, la
+ * pantalla volvía a pintarse con el nombre anterior: la ruta estaba en la
+ * caché del navegador y se reutilizaba, así que el aviso «tu nombre quedó
+ * guardado» salía encima del nombre viejo —la peor combinación posible—. Ni
+ * `revalidatePath` lo evitaba. Devolviendo el valor, lo que se ve es lo que se
+ * acaba de escribir, sin depender de ninguna caché.
+ */
+export async function guardarNombre(
+  _previo: EstadoNombre,
+  formData: FormData,
+): Promise<EstadoNombre> {
+  const nombre = (formData.get("nombre") ?? "").toString().trim().slice(0, 80);
+  if (!nombre) return { nombre: null, error: null };
+
+  const supabase = await createClient();
+  const { data: portal } = await supabase
+    .from("portals")
+    .select("id")
+    .maybeSingle();
+
+  if (!portal) return { nombre: null, error: await textoDeCuenta("nombreError") };
+
+  /*
+   * Con `select` detrás: una actualización que no encuentra su fila no es un
+   * error para Postgrest —devuelve cero filas y ningún mensaje—, así que sin
+   * esto un fallo de permisos se vería como «tu nombre quedó guardado».
+   */
+  const { data: guardado, error } = await supabase
+    .from("portals")
+    .update({ full_name: nombre })
+    .eq("id", portal.id)
+    .select("full_name")
+    .maybeSingle();
+
+  if (error || !guardado) {
+    console.error("[cuenta] no se pudo guardar el nombre", error);
+    return { nombre: null, error: await textoDeCuenta("nombreError") };
+  }
+
+  /*
+   * Sin `revalidatePath`, a propósito.
+   *
+   * Cualquier revalidación dentro de una acción hace que el router refresque
+   * la pantalla actual, y ese refresco competía con el estado que esta misma
+   * acción devuelve: unas veces ganaba uno y otras el otro, así que el nombre
+   * nuevo aparecía o no según el día. Lo delató una prueba intermitente.
+   *
+   * No hace falta: las pantallas que enseñan el nombre leen la sesión, así que
+   * son dinámicas y se vuelven a renderizar en la siguiente navegación. Lo que
+   * se ve aquí sale de lo que devuelve la base, que es la verdad.
+   */
+  return { nombre: guardado.full_name, error: null };
+}
+
+/**
+ * Cambia cómo le hablan las lecturas: en femenino, en masculino o sin marcar.
+ *
+ * Se cambia desde aquí por lo mismo que el nombre: no entra en ningún cálculo.
+ * La carta sale de la fecha, la hora y el lugar, y lo ya escrito se queda como
+ * se escribió —no se reescribe una lectura que la persona pudo leer ayer—. Lo
+ * que cambia es de aquí en adelante, y eso es lo que dice el aviso.
+ *
+ * Devuelve el valor guardado en vez de redirigir, por la misma razón que
+ * `guardarNombre()`: la caché de la ruta servía la pantalla anterior.
+ */
+export async function guardarGenero(
+  _previo: EstadoGenero,
+  formData: FormData,
+): Promise<EstadoGenero> {
+  const genero = generoParaLaVoz(formData.get("genero"));
+  if (!genero) return { genero: null, error: null };
+
+  const supabase = await createClient();
+  const { data: portal } = await supabase
+    .from("portals")
+    .select("id")
+    .maybeSingle();
+
+  if (!portal) return { genero: null, error: await textoDeCuenta("generoError") };
+
+  const { data: guardado, error } = await supabase
+    .from("portals")
+    .update({ genero })
+    .eq("id", portal.id)
+    .select("genero")
+    .maybeSingle();
+
+  if (error || !guardado) {
+    console.error("[cuenta] no se pudo guardar el género", error);
+    return { genero: null, error: await textoDeCuenta("generoError") };
+  }
+
+  return { genero: generoParaLaVoz(guardado.genero), error: null };
+}
+
+async function textoDeCuenta(clave: string): Promise<string> {
+  const { getTranslations } = await import("next-intl/server");
+  const t = await getTranslations("cuenta");
+  return t(clave as never);
+}
